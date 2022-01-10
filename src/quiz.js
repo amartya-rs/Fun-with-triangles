@@ -1,15 +1,15 @@
-var button = document.querySelector(".check-button");
-var outputDiv = document.querySelector(".output");
-var form = document.querySelector(".form-quiz");
+const button = document.querySelector(".check-button");
+const outputDiv = document.querySelector(".output");
+const form = document.querySelector(".form-quiz");
 
 const correctAnswers = ["90", "Right Angle"];
 
 
-function onClickHandler() {
-  var score = 0;
-  var index = 0;
+let onClickHandler = () => {
+  let score = 0;
+  let index = 0;
 
-  var formDatas = new FormData(form);
+  let formDatas = new FormData(form);
   for(let value of formDatas.values()) {
     if (value == correctAnswers[index]) {
       score++
@@ -17,7 +17,7 @@ function onClickHandler() {
     index++
   }
 
-  outputDiv.innerText = "Your score is: " + score;
+  outputDiv.innerText = `Your score is: ${score}`;
 }
 
 
